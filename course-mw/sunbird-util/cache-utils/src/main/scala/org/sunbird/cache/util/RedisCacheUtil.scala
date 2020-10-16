@@ -22,8 +22,6 @@ class RedisCacheUtil {
     private val redis_host = Platform.getString("sunbird_redis_host", "localhost")
     private val redis_port = Platform.getInteger("sunbird_redis_port", 6379)
     private val index = Platform.getInteger("redis.dbIndex", 0)
-
-
     private def buildPoolConfig = {
         val poolConfig = new JedisPoolConfig
         poolConfig.setMaxTotal(Platform.getInteger("redis.connection.max", 2))
